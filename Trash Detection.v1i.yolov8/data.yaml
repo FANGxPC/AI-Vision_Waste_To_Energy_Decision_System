@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['cardboard', 'glass', 'metal', 'organic', 'paper', 'plastic']
+
+roboflow:
+  workspace: sadique-9mmfl
+  project: trash-detection-ujrn0-cojlu
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/sadique-9mmfl/trash-detection-ujrn0-cojlu/dataset/1
