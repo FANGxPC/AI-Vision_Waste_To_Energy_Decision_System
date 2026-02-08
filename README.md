@@ -1,4 +1,4 @@
-# HackSphere: AI-Vision_Waste_To_Energy_Decision_Support_System
+# HackSphere: AI-Vision_Waste_To_Energy_Decision_System
 
 [![Python-Version-3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit-Version-1.32.2](https://img.shields.io/badge/Streamlit-1.32.2-orange.svg)](https://streamlit.io/)
