@@ -1,6 +1,6 @@
 import requests
 
-def get_weather_context(api_key='5734a5b5abfbbfbaa2c050596331ef46', city="Vellore"):
+def get_weather_context(api_key=YOUR_API_KEY, city="Vellore"):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
     
     default_weather = {"humidity": 50, "rain_1h": 0, "is_monsoon": False}
