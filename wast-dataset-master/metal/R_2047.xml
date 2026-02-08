@@ -1,0 +1,26 @@
+<annotation>
+	<folder>metal</folder>
+	<filename>R_2047.jpg</filename>
+	<path>D:\chosen_waste_photos\metal\R_2047.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>250</width>
+		<height>153</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>metal</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>17</xmin>
+			<ymin>4</ymin>
+			<xmax>225</xmax>
+			<ymax>153</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,10 +1,13 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+
+path: /home/fang/Downloads/HackSphere/Trash Detection.v1i.yolov8 
+train: train/images
+val: valid/images
+test: test/images
 
 nc: 6
 names: ['cardboard', 'glass', 'metal', 'organic', 'paper', 'plastic']
-
+# The Roboflow metadata below doesn't affect training, 
+# but it's good to keep for your records.
 roboflow:
   workspace: sadique-9mmfl
   project: trash-detection-ujrn0-cojlu

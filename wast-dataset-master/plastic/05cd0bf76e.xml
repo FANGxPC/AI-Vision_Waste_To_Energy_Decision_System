@@ -1,0 +1,26 @@
+<annotation>
+	<folder>plastic</folder>
+	<filename>05cd0bf76e.jpg</filename>
+	<path>D:\chosen_waste_photos\plastic\05cd0bf76e.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>275</width>
+		<height>183</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>plastic</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>46</xmin>
+			<ymin>73</ymin>
+			<xmax>153</xmax>
+			<ymax>140</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>metal</folder>
+	<filename>738b15a6bc.jpg</filename>
+	<path>D:\chosen_waste_photos\metal\738b15a6bc.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>223</width>
+		<height>226</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>metal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>35</xmin>
+			<ymin>5</ymin>
+			<xmax>173</xmax>
+			<ymax>216</ymax>
+		</bndbox>
+	</object>
+</annotation>

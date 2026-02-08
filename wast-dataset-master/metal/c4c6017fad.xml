@@ -1,0 +1,26 @@
+<annotation>
+	<folder>metal</folder>
+	<filename>c4c6017fad.jpg</filename>
+	<path>D:\chosen_waste_photos\metal\c4c6017fad.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>217</width>
+		<height>232</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>metal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>25</xmin>
+			<ymin>17</ymin>
+			<xmax>197</xmax>
+			<ymax>168</ymax>
+		</bndbox>
+	</object>
+</annotation>

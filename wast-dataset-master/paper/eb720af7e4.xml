@@ -1,0 +1,26 @@
+<annotation>
+	<folder>paper</folder>
+	<filename>eb720af7e4.jpg</filename>
+	<path>D:\chosen_waste_photos\paper\eb720af7e4.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>626</width>
+		<height>417</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>paper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>129</xmin>
+			<ymin>104</ymin>
+			<xmax>481</xmax>
+			<ymax>312</ymax>
+		</bndbox>
+	</object>
+</annotation>

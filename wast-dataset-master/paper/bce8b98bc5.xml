@@ -1,0 +1,26 @@
+<annotation>
+	<folder>paper</folder>
+	<filename>bce8b98bc5.jpg</filename>
+	<path>D:\chosen_waste_photos\paper\bce8b98bc5.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>750</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>paper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>82</xmin>
+			<ymin>48</ymin>
+			<xmax>922</xmax>
+			<ymax>688</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>glass</folder>
+	<filename>78ed8fc6cb.jpg</filename>
+	<path>D:\chosen_waste_photos\glass\78ed8fc6cb.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1300</width>
+		<height>867</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>glass</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>657</xmin>
+			<ymin>113</ymin>
+			<xmax>1091</xmax>
+			<ymax>657</ymax>
+		</bndbox>
+	</object>
+</annotation>

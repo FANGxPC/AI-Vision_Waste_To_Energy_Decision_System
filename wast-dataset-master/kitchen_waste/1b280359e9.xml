@@ -1,0 +1,26 @@
+<annotation>
+	<folder>kitchen_waste</folder>
+	<filename>1b280359e9.jpg</filename>
+	<path>D:\chosen_waste_photos\kitchen_waste\1b280359e9.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>292</width>
+		<height>173</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>kitchen_waste</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>9</xmin>
+			<ymin>40</ymin>
+			<xmax>278</xmax>
+			<ymax>150</ymax>
+		</bndbox>
+	</object>
+</annotation>
