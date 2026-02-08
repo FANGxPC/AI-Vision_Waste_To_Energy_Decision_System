@@ -1,85 +1,104 @@
-# AI-004 WastePredictor
+# HackSphere: AI Waste-to-Energy Manager
 
-End-to-end waste detection and energy potential estimator using YOLOv8 and Streamlit.
+[![Python-Version-3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Streamlit-Version-1.32.2](https://img.shields.io/badge/Streamlit-1.32.2-orange.svg)](https://streamlit.io/)
+[![Ultralytics-YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-red.svg)](https://ultralytics.com/)
+
+An intelligent web application for optimizing Waste-to-Energy (WtE) plant operations. This tool uses computer vision to analyze incoming waste, calculate its energy potential in real-time, and provide actionable recommendations for processing.
+
+![Demo GIF](https://i.imgur.com/example.gif)  <!-- Placeholder for a demo GIF -->
+
+## Key Features
+
+- **AI Waste Analysis:** Uses a YOLOv8 model to instantly identify and segment different types of waste (plastic, paper, organic, etc.) from an uploaded image.
+- **Dynamic Energy Calculation:** Calculates the Lower Heating Value (LHV) of the waste batch, providing a precise measure of its energy potential in MJ/kg.
+- **Weather-Aware Logic:** Automatically adjusts moisture content calculations based on real-time weather data (e.g., "Monsoon" vs. "Dry Season"), leading to more accurate energy yield predictions.
+- **Decision Support:** Provides clear, color-coded actions based on the final energy value:
+    - **✅ Direct Combustion:** For high-energy, low-moisture waste.
+    - **⚠️ Pre-Drying Required:** For energy-viable waste that is too wet for efficient combustion.
+    - **🚨 Reject / Biogas:** For low-energy or energy-negative waste that is unsuitable for incineration.
+- **Operational Dashboard:** A user-friendly interface built with Streamlit, featuring:
+    - Side-by-side comparison of raw and AI-annotated images.
+    - Interactive charts showing waste composition.
+    - A detailed breakdown of the energy calculation.
+- **History & Reporting:** Keeps a running log of all scans and decisions, which can be downloaded as a CSV report.
+
+## How It Works
+
+1.  **Upload Image:** The user uploads a photo of a waste batch.
+2.  **AI Segmentation:** The YOLOv8 model processes the image to determine the percentage composition of different materials.
+3.  **Energy Calculation:** The `energy_math` module calculates the total energy potential (LHV), factoring in the material type, composition percentage, and current weather conditions.
+4.  **Actionable Insight:** The app displays the final energy value and recommends the best processing action.
+
+## Tech Stack
+
+- **ML / Computer Vision:** Ultralytics YOLOv8, OpenCV, Pillow
+- **Web Framework:** Streamlit
+- **Data & Plotting:** Pandas, Plotly Express
+- **APIs:** Requests (for OpenWeatherMap)
+
+## Setup and Installation
+
+1.  **Prerequisites:**
+    - Python 3.9+
+    - Git
+
+2.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/your-username/HackSphere.git
+    cd HackSphere
+    ```
+
+3.  **Create a Virtual Environment:**
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate  # On Windows, use: .venv\Scripts\activate
+    ```
+
+4.  **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+5.  **Download Model Weights:**
+    Ensure you have the trained model file `best.pt`. Place it in the following directory:
+    ```
+    ./weights/wasteland_model/WtE_Predictor/v3_final_refinement/weights/best.pt
+    ```
+    *If you don't have this file, you may need to train the model first or download pre-trained weights if available.*
+
+## Running the Application
+
+Once the setup is complete, run the Streamlit app from your terminal:
+
+```bash
+streamlit run app.py
+```
+
+The application will open in your web browser.
+
+## Configuration
+
+The application uses the OpenWeatherMap API to fetch weather data. The API key is currently hardcoded in `src/weather_api.py`. For production use, it is highly recommended to store it as an environment variable.
+
+1.  Create a `.env` file in the root directory.
+2.  Add your API key to the file:
+    ```
+    OPENWEATHER_API_KEY="your_api_key_here"
+    ```
+3.  Modify `src/weather_api.py` to load the key from the environment.
 
 ## Project Structure
 
 ```
-AI-004-WastePredictor/
-├── Trash Detection.v1i.yolov8/        # Your downloaded dataset (provide locally)
-│   ├── train/
-│   ├── valid/
-│   ├── test/
-│   └── data.yaml
-├── models/                            # Trained weights will be saved here
-│   └── (best.pt)                      # Created after training or copy your own
+.
+├── app.py                  # Main Streamlit application
+├── requirements.txt        # Project dependencies
 ├── src/
-│   ├── __init__.py
-│   ├── vision_engine.py               # Detection logic
-│   ├── energy_math.py                 # Biogas/RDF calculations
-│   └── weather_api.py                 # Optional weather data helper
-├── app.py                             # Streamlit dashboard
-├── requirements.txt                   # Dependencies
-└── README.md                          # This file
+│   ├── vision_engine.py    # Waste detection and composition logic
+│   ├── energy_math.py      # LHV and energy potential calculations
+│   └── weather_api.py      # Fetches weather data
+├── weights/
+│   └── .../best.pt         # Trained YOLO model weights
+└── garbage_testing_dataset/ # Sample images for testing
 ```
-
-## Setup
-
-1) Python 3.9–3.11 recommended.
-
-2) Create a virtual environment and install dependencies:
-
-```
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
-pip install -U pip
-pip install -r requirements.txt
-```
-
-3) Ensure dataset is placed at:
-
-```
-AI-004-WastePredictor/Trash Detection.v1i.yolov8/
-```
-with a data.yaml describing your splits.
-
-4) (Optional) If you already have trained weights, place them at:
-
-```
-AI-004-WastePredictor/models/best.pt
-```
-
-## Training
-
-Train YOLOv8n on your dataset:
-
-```
-python -m ultralytics cfg                                              # optional: verify install
-yolo task=detect mode=train model=yolov8n.pt data="Trash Detection.v1i.yolov8/data.yaml" imgsz=640 epochs=50 project=models name=run1
-```
-
-Artifacts appear under `models/run1/` with `weights/best.pt`. Copy or symlink to `models/best.pt`:
-
-```
-cp models/run1/weights/best.pt models/best.pt
-```
-
-## Running the App
-
-```
-streamlit run app.py
-```
-
-The app lets you:
-- Upload an image and run trash detection
-- See detected classes and counts
-- Estimate energy potential (Biogas/RDF) from detected categories
-- (Optional) Factor local rainfall from Open-Meteo
-
-## Environment Variables (optional)
-
-No keys are required for the default weather source (Open-Meteo). If you switch providers, add your variables to a `.env` and load via `python-dotenv`.
-
-## Notes
-- If GPU is available (CUDA), ultralytics will use it automatically. Otherwise inference runs on CPU.
-- Adjust energy factors in `src/energy_math.py` per your local baseline.
