@@ -6,7 +6,6 @@
 
 An intelligent web application for optimizing Waste-to-Energy (WtE) plant operations. This tool uses computer vision to analyze incoming waste, calculate its energy potential in real-time, and provide actionable recommendations for processing.
 
-![Demo GIF](https://i.imgur.com/example.gif)  <!-- Placeholder for a demo GIF -->
 
 ## Key Features
 
